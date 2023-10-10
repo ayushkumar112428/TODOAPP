@@ -4,7 +4,7 @@ import 'package:todoapp/model/todo.dart';
 import 'package:todoapp/wigetes/todo_item.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 searchBox(),
-                SizedBox(height: 40,),
+                const SizedBox(height: 40,),
                 Expanded(
                     child: ListView(
                   children: [
@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                   ],
                 )),
-                SizedBox(height: 70,)
+                const SizedBox(height: 70,)
               ],
             ),
           ),
@@ -66,12 +66,12 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.only(bottom: 20, right: 10, left: 20),
-                    padding: EdgeInsets.symmetric(horizontal: 20,vertical: 6),
+                    margin: const EdgeInsets.only(bottom: 20, right: 10, left: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 6),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(7),
                       color: Colors.white,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Colors.grey,
                           offset: Offset(0.0, 0.0),
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: TextField(
                       controller: _todoController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Add new todo item...',
                         border: InputBorder.none,
                       ),
@@ -90,17 +90,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 20, right: 20, left: 20),
+                  margin: const EdgeInsets.only(bottom: 20, right: 20, left: 20),
                   child: ElevatedButton(
                     onPressed: (){
                       _addToDoItem(_todoController.text);
-                    }, 
-                    child: Text('+',style: TextStyle(fontSize: 45),),
+                    },
                     style: ElevatedButton.styleFrom(
-                      primary: tdBlue,
-                      minimumSize: Size(58, 58),
+                      minimumSize: const Size(58, 58),
                       elevation: 10,                    
-                    ),
+                    ), 
+                    child: const Text('+',style: TextStyle(fontSize: 45),),
                     ),
                 ),
               ],
@@ -180,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
             color: tdBlack,
             size: 30,
           ),
-          Container(
+          SizedBox(
               height: 40,
               width: 40,
               child: ClipRRect(

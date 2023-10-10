@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:todoapp/constantn/color.dart';
 import 'package:todoapp/model/todo.dart';
@@ -10,12 +12,12 @@ class ToDoItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(bottom: 20),
       child: ListTile(
         onTap: () {
           onToDoChanged(todo);
         },
-        contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 20),
+        contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 20),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -30,8 +32,8 @@ class ToDoItem extends StatelessWidget {
         ),
         ),
         trailing: Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
-          padding: EdgeInsets.all(0),
+          margin: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.all(0),
           height: 35,
           width: 35,
           decoration: BoxDecoration(
@@ -42,7 +44,7 @@ class ToDoItem extends StatelessWidget {
             onPressed: (){onDeleteItem(todo.id);}, 
             iconSize: 18,
             color: Colors.white,
-            icon: Icon(Icons.delete),
+            icon: const Icon(Icons.delete),
             ),
         ),
       ),
